@@ -3,7 +3,7 @@ import soundfile as sf
 from scipy.io.wavfile import write
 
 fs = 44100  # Sample rate
-seconds = 6  # Duration of recording
+seconds = 8  # Setting the duration of recording
 print("Listening...")
 
 myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1)

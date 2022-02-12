@@ -1,15 +1,96 @@
 Time##GEN_SPECIFIC##DEFAULT_TIME
 Date##GEN_SPECIFIC##DEFAULT_DATE
+Day##GEN_SPECIFIC##DEFAULT_DAY
+Month##GEN_SPECIFIC##DEFAULT_MONTH
+you born##GEN##I became operational on 13th February 2022
+your birthday##GEN##I became operational on 13th February 2022
+Year##GEN_SPECIFIC##DEFAULT_YEAR
 Open##OPEN##DEFAULT
 Launch##OPEN##DEFAULT
 Search for##SEARCH##DEFAULT
 Search about##SEARCH##DEFAULT
 Search web##SEARCH##DEFAULT
+Remainder##MATH##DEFAULT_MOD
+Modulo##MATH##DEFAULT_MOD
 Add##MATH##DEFAULT_ADD
 Adding##MATH##DEFAULT_ADD
 Addition##MATH##DEFAULT_ADD
-Multiply##MATH##DEFAULT_MULT
+Added to##MATH##DEFAULT_ADD
 plus##MATH##DEFAULT_ADD
+Subtract##MATH##DEFAULT_SUB
+Subtracting##MATH##DEFAULT_SUB
+Subtraction##MATH##DEFAULT_SUB
+Subtracted from##MATH##DEFAULT_SUB
+minus##MATH##DEFAULT_SUB
+Multiply##MATH##DEFAULT_MULT
+Multiplication##MATH##DEFAULT_MULT
+Multiplying##MATH##DEFAULT_MULT
+Multiplied by##MATH##DEFAULT_MULT
+Divide##MATH##DEFAULT_DIV
+Dividing##MATH##DEFAULT_DIV
+Division##MATH##DEFAULT_DIV
+Divided by##MATH##DEFAULT_DIV
++##MATH##DEFAULT_ADD
+*##MATH##DEFAULT_MULT
+x##MATH##DEFAULT_MULT
+X##MATH##DEFAULT_MULT
+-##MATH##DEFAULT_SUB
+/##MATH##DEFAULT_DIV
+%##MATH##DEFAULT_MOD
++ -##SEARCH##DEFAULT
++ *##SEARCH##DEFAULT
++ x##SEARCH##DEFAULT
++ X##SEARCH##DEFAULT
++ /##SEARCH##DEFAULT
++ %##SEARCH##DEFAULT
+- *##SEARCH##DEFAULT
+- x##SEARCH##DEFAULT
+- X##SEARCH##DEFAULT
+- /##SEARCH##DEFAULT
+- %##SEARCH##DEFAULT
+/ -##SEARCH##DEFAULT
+/ *##SEARCH##DEFAULT
+/ x##SEARCH##DEFAULT
+/ X##SEARCH##DEFAULT
+/ %##SEARCH##DEFAULT
+% -##SEARCH##DEFAULT
+% *##SEARCH##DEFAULT
+% x##SEARCH##DEFAULT
+% X##SEARCH##DEFAULT
+% /##SEARCH##DEFAULT
+x -##SEARCH##DEFAULT
+x *##SEARCH##DEFAULT
+x X##SEARCH##DEFAULT
+x /##SEARCH##DEFAULT
+x %##SEARCH##DEFAULT
+X -##SEARCH##DEFAULT
+X *##SEARCH##DEFAULT
+X x##SEARCH##DEFAULT
+X /##SEARCH##DEFAULT
+X %##SEARCH##DEFAULT
+* -##SEARCH##DEFAULT
+* x##SEARCH##DEFAULT
+* X##SEARCH##DEFAULT
+* /##SEARCH##DEFAULT
+* %##SEARCH##DEFAULT
+Find##SEARCH##DEFAULT
+times##SEARCH##DEFAULT
 Hello##GEN##Hey there!
+Hey##GEN##Hey there!
+Good morning##GEN##Good morning
+Good afternoon##GEN##Good afternoon
+Good evening##GEN##Good evening
+Good night##GEN##Good night... Take care.
+Goodbye##GEN##Until we talk again...
+Good##GEN##It's nice to be appreciated.
+Bye##GEN##Goodbye
+you later##GEN##Goodbye
 How you##GEN##I am fine. Thanks for asking!
+How you?##GEN##I am fine. Thanks for asking!
+your name##GEN##I am Zara... Glad to meet you.
+who you##GEN##My name is Zara... Nice to meet you.
 What's up##GEN##Going great. I hope you are doing well too
+How going##GEN##Going great. I hope you are doing well too
+your hobby##GEN##I like coding.
+great bhai##GEN##Thank you. See you later.
+Great##GEN##Glad to be of help.

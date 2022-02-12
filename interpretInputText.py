@@ -90,6 +90,18 @@ if(type == "GEN_SPECIFIC"): #Real time actions (eg: finding out time, date etc..
         day = dayList[datetime.today().weekday()]
         botSpeak("Today is "+day)
         print("Today is "+day)
+    
+    elif(topic == "month"):
+        date = datetime.now()
+        month = date.strftime("%B")
+        botSpeak("It's "+month)
+        print("It's "+month+"!")
+
+    elif(topic == "year"):
+        date = datetime.now()
+        year = str(date.today()).split("-")[0]
+        botSpeak("The current year is "+str(year))
+        print("The current year is "+str(year))
 
     elif(topic == "date"):
         date = datetime.now()
@@ -112,8 +124,12 @@ if(type == "GEN_SPECIFIC"): #Real time actions (eg: finding out time, date etc..
 
 
 elif(type == "OPEN"): #Opening native apps
-    dummy = 1 #DELETE THIS LINE
+    dummy = 1 #DELETE THIS LINE and add required code
 
+#Note: -Due to lack of time, and since opening native apps is OS dependent, 
+#       we have left this capability as future scope.
+#      -Currently the virtual assistant will detect application opening instructions,
+#       but will not perform any task.
 
 elif(type == "SEARCH"): #Web search
     index = -1
@@ -140,8 +156,8 @@ elif(type == "SEARCH"): #Web search
     if(len(topic) == 0):
         botSpeak("Sorry. I didn't get that. Please try again")
         print("Sorry. I didn't get that.\nPlease try again.")
-        botSpeak("If you want you can type in your query next time")
-        print("If you want you can type in your query next time!")
+        botSpeak("If you want you can type your query next time")
+        print("If you want you can type your query next time!")
     else:    
         with open("search.txt", 'w') as s:
             s.write(topic)
