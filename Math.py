@@ -27,7 +27,6 @@ numbers = []
 for word in userText.split():
     if(word.isdigit()):
         numbers.append(int(word))
-        print(numbers)
 
 if(len(numbers) == 0):
     errorcall()
