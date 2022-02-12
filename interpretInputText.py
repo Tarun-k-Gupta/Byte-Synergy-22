@@ -140,6 +140,8 @@ elif(type == "SEARCH"): #Web search
     if(len(topic) == 0):
         botSpeak("Sorry. I didn't get that. Please try again")
         print("Sorry. I didn't get that.\nPlease try again.")
+        botSpeak("If you want you can type in your query next time")
+        print("If you want you can type in your query next time!")
     else:    
         with open("search.txt", 'w') as s:
             s.write(topic)
