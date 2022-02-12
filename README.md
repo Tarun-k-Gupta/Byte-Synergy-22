@@ -1,1 +1,1 @@
-# Byte-Synergy-22
+# Byte-Synergy-22 hackathon project 
