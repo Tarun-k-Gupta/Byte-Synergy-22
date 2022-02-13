@@ -1,21 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
-import re
-url = "https://en.wikipedia.org/wiki/Fermat%27s_little_theorem"
+url = "https://en.wikipedia.org/wiki/Web3"
 r = requests.get(url)
 soup = BeautifulSoup(r.content, 'html5lib')
 
-print(soup.find('h1', {"id": "firstHeading"}).text)
-firstp = soup.find('p',class_="")
-print(firstp.text)
+try:
+    #printing the main heading
+    print(soup.find('h1', {"id": "firstHeading"}).text)
 
-for i in firstp.next_siblings:
-    if(i.name == 'p' or i.name == 'h2'):
-        if(i.name == 'h2'):
-            i = i.text.replace('[edit]','')
-            if(i == 'See also' or i == 'Publications'):
-                break
-            print(i)
-            continue
-        
-        print(i.text)
+    #getting the first para below the main heading
+    getp = soup.find('p',class_="")
+    p_str = getp.text
+    for i in range(1,51):
+        p_str = p_str.replace("["+str(i)+"]","")
+    print(p_str)
+except:
+    pass
