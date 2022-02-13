@@ -213,6 +213,7 @@ elif(type == "SEARCH"): #Web search
                 s.write(topic)
             os.system("python3 searchEngine.py")
             os.remove("search.txt")
+            os.system("python3 wik.py")
 
 
 elif(type == "MATH"): #Arithmetic operations
