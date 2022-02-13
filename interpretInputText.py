@@ -173,15 +173,16 @@ elif(type == "SEARCH"): #Web search
     if(any(x in inputList for x in ['Coronavirus', 'coronavirus', 'covid', 'Covid', 'SARS'])):
 
             a_set = set(inputList)
-            b_set = set(['India', 'Brazil', 'USA', 'UK', 'Germany', 'France', 'Spain', 'Pakistan', 'Italy'])
+            b_set = set(['India', 'Brazil', 'USA', 'UK', 'Germany', 'France', 'Spain', 'Pakistan', 'Italy', 'World', 'Russia', 'Turkey', 'China', 'Bangladesh', 'Mexico', 'Indonesia', 'Japan', 'Philippines', 'South Africa', 'Iran', 'Sri Lanka', 'Finland', 'Myanmar', 'New Zealand', 'Australia'])
 
             # check length
             if len(a_set.intersection(b_set)) > 0:
                 text = a_set.intersection(b_set)
                 temp = list(text)
                 final_text = temp[0]
-                print(final_text)
-                os.system("python3 scraper.py final_text")
+                os.system("python3 scraper.py " + final_text)
+            else:
+                botSpeak("Sorry I didn't get that")
     else:
         index = -1
         wordList=["for", "about", "regarding"]
