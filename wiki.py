@@ -1,26 +1,40 @@
 import requests
 from gtts import gTTS
-import sys
 from playsound import playsound
 import os
-# search_term = str(input("enter search term: "))
-search_website = str(input("enter search website: "))
-search_query = search_website.lstrip('https://en.wikipedia.org/wiki/')
 
-url = 'https://en.wikipedia.org/w/api.php' + '?format=json&action=query&prop=extracts&explaintext=1&titles=' + search_query
-# response = requests.get(
-#     'https://en.wikipedia.org/w/api.php',
-#     params={
-#         'action': 'query',
-#         'format': 'json',
-#         'titles': search_term,
-#         'prop': 'extracts',
-#         'exintro': 1,
-#         'explaintext': 1,
-#     }
-# ).json()
+with open('links.txt', 'r') as r:
+    allLinks = r.readlines()
+os.remove("links.txt")
 
-response = requests.get(url).json()
+count = 0
+wiklink = ""
+for link in allLinks:
+    index = link.find("##TRUE")
+    if (index != -1):
+        count = count + 1
+        wiklink = link.replace("##TRUE", "")
+        print(wiklink)
+        search_query = wiklink.lstrip('https://en.wikipedia.org/wiki/')
+        search = search_query.replace("_", " ")
+        search = search.replace("\n", "")
+        break
+
+if (count == 0):
+    print(allLinks[0].replace("##FALSE", ""))
+    exit()
+
+response = requests.get(
+    'https://en.wikipedia.org/w/api.php',
+    params={
+        'action': 'query',
+        'format': 'json',
+        'titles': search,
+        'prop': 'extracts',
+        'exintro': 1,
+        'explaintext': 1,
+    }
+).json()
 
 page = next(iter(response['query']['pages'].values()))
 
@@ -35,6 +49,7 @@ try:
             continue
 except:
     print("Search term could not be found")
+    exit()
 
 string = ""
 text_file = open("wiki.txt", "w")
@@ -46,9 +61,9 @@ with open("wiki.txt", 'r') as s:
 myLang = 'en-in'
 
 myAudio = gTTS(text=myText, lang=myLang, slow=False)
+text_file.close()
 os.remove("wiki.txt")
 myAudio.save("wiki.wav")
-text_file.close()
 print(string.join(output))
 playsound('wiki.wav')
 os.remove("wiki.wav")
