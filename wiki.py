@@ -29,7 +29,7 @@ def wiki_search(textbox):
 
     if (count == 0):
         string = allLinks[0].replace("##FALSE", "")
-        GUI.guiPrint(textbox, wiklink)
+        GUI.guiPrint(textbox, string)
         webbrowser.open_new(string)
         exit()
 
