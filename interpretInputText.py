@@ -16,6 +16,8 @@ import GUI
 import botListen as bL
 import interpretAudio as iA
 import tkinter as tk
+import scraper as sc
+import wiki as wk
 
 def actionDetector(keywords, inputText):
     strictness = 0.85
@@ -199,18 +201,19 @@ def interpretInputText(textBox):
 
     elif(type == "SEARCH"): #Web search
         inputList = inputText.split(" ")
-        if(any(x in inputList for x in ['Coronavirus', 'coronavirus', 'covid', 'Covid', 'SARS'])):
+        if(any(x in inputList for x in ['Coronavirus', 'coronavirus', 'covid', 'Covid', 'SARS', 'virus'])):
 
                 a_set = set(inputList)
-                b_set = set(['India', 'Brazil', 'USA', 'UK', 'Germany', 'France', 'Spain', 'Pakistan', 'Italy'])
+                b_set = set(['India', 'Brazil', 'USA', 'UK', 'Germany', 'France', 'Spain', 'Pakistan', 'Italy', 'World', 'Russia', 'Turkey', 'China', 'Bangladesh', 'Mexico', 'Indonesia', 'Japan', 'Philippines', 'South Africa', 'Iran', 'Sri Lanka', 'Finland', 'Myanmar', 'New Zealand', 'Australia'])
 
                 # check length
                 if len(a_set.intersection(b_set)) > 0:
                     text = a_set.intersection(b_set)
                     temp = list(text)
                     final_text = temp[0]
-                    GUI.guiPrint(textBox, final_text)
-                    os.system("python3 scraper.py final_text")
+                    sc.webscraper(final_text, textBox)
+                else:
+                    botSpeak("Sorry I didn't get that")
         else:
             index = -1
             wordList=["for", "about", "regarding"]
@@ -242,6 +245,7 @@ def interpretInputText(textBox):
                     s.write(topic)
                 se.searchFor()
                 os.remove("search.txt")
+                wk.wiki_search(textBox)
 
 
     elif(type == "MATH"): #Arithmetic operations
