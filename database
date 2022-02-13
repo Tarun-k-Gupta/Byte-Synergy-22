@@ -32,10 +32,11 @@ Coronavirus USA cases##SEARCH##DEFAULT
 Coronavirus Brazil cases##SEARCH##DEFAULT
 Coronavirus UK cases##SEARCH##DEFAULT
 Coronavirus##SEARCH##DEFAULT
+Search##SEARCH##DEFAULT
 Search for##SEARCH##DEFAULT
 Search about##SEARCH##DEFAULT
 Search web##SEARCH##DEFAULT
-Look up##SEARCH##DEFAULT
+Who##SEARCH##DEFAULT
 Remainder##MATH##DEFAULT_MOD
 Modulo##MATH##DEFAULT_MOD
 Add##MATH##DEFAULT_ADD
@@ -100,19 +101,7 @@ X %##SEARCH##DEFAULT
 * /##SEARCH##DEFAULT
 * %##SEARCH##DEFAULT
 Find##SEARCH##DEFAULT
-Integrate##SEARCH##DEFAULT
-Integration##SEARCH##DEFAULT
-Integral##SEARCH##DEFAULT
-Differentiate##SEARCH##DEFAULT
-Differentiation##SEARCH##DEFAULT
-Derivative##SEARCH##DEFAULT
-Evaluate##SEARCH##DEFAULT
-expression##SEARCH##DEFAULT
-Check##SEARCH##DEFAULT
-What value##SEARCH##DEFAULT
-Verify##SEARCH##DEFAULT
 times##SEARCH##DEFAULT
-Play##SEARCH##DEFAULT
 Hello##GEN##Hey there!
 Hey##GEN##Hey there!
 Good morning##GEN##Good morning
@@ -121,9 +110,6 @@ Good evening##GEN##Good evening
 Good night##GEN##Good night... Take care.
 Goodbye##GEN##Until we talk again...
 Good##GEN##It's nice to be appreciated.
-You great##GEN##It's nice to be appreciated.
-You amazing##GEN##It's nice to be appreciated.
-You smart##GEN##It's nice to be appreciated.
 Bye##GEN##Goodbye
 you later##GEN##Goodbye
 How you##GEN##I am fine. Thanks for asking!
@@ -135,3 +121,4 @@ How going##GEN##Going great. I hope you are doing well too
 your hobby##GEN##I like coding.
 great bhai##GEN##Thank you. See you later.
 Great##GEN##Glad to be of help.
+what is my name##GEN##user

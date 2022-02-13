@@ -63,4 +63,8 @@ def getNumbers(text):
     
     return grandFinalNumbers
 
-print(getNumbers("add four and five"))
+def link(link):
+    words = link.split('/')
+    print(words)
+
+link("https://en.wikipedia.org/wiki/Luther_(TV_series)")
