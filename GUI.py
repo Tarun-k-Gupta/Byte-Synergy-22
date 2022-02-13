@@ -13,14 +13,20 @@ def func():
     print("l")
 
 def mic_func():
+    def speak():
+        bL.botListen()
+        iA.interpretAudio(T)
+        iIT.interpretInputText(T)
     new_mic_window = tk.Tk()
     new_mic_window.title("Microphone")
     new_mic_window.geometry("500x500")
     
     T = Text(new_mic_window)
-    bL.botListen()
-    iA.interpretAudio(T)
-    iIT.interpretInputText(T)
+    T.pack()
+
+    speak_btn = Button(new_mic_window, height= 2, width= 50, text= "Speak", command= speak)
+    speak_btn.pack()
+
     new_mic_window.mainloop()
 
 def kbd_func():
@@ -29,13 +35,13 @@ def kbd_func():
         with open("userInput.txt", 'w') as file:
             file.write(userText)
         iIT.interpretInputText(T)
-        T.insert(END, "Click on NEXT for your next command\n")
+        T.insert(END, "\nClick on NEXT for your next command\n")
 
     def clear():
         T.delete(1.0, "end")
 
     new_kbd_window = tk.Tk()
-    new_kbd_window.title("KeyBoard")
+    new_kbd_window.title("Chat Box")
     new_kbd_window.geometry("500x500")
 
     T = Text(new_kbd_window)
@@ -78,6 +84,9 @@ def zara_window():
     zara = tk.Tk()
     zara.title('Zara')
     zara.geometry("1500x1500")
+    
+    icon = PhotoImage(file= "images/zara.png")
+    zara.tk.call('wm', 'iconphoto', zara._w, icon)
 
     mic = PhotoImage(file= "images/mic.png")
     mic_button = tk.Button(zara,image= mic, height= 150, width= 150, command= mic_func)
@@ -120,8 +129,8 @@ def run():
         T = Text(error_win)
         guiPrint(T, "You are offline!")
         guiPrint(T, "Try Again")
-        #T.insert(tk.END, " You are offline!")
-        #T.pack(pady= 20)
+        T.insert(tk.END, " You are offline!")
+        T.pack(pady= 20)
 
         error_win.mainloop()
 
