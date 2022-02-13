@@ -18,4 +18,4 @@ Mathematical operations with multiple operands will perform a web search which m
 
 Modules from python used:
 
-tkinter,time,gtts,selenium,webbrowser,os,playsound,speech_recognition,sys,requests,beautifulsoup
+tkinter, time, gtts, selenium, webbrowser, os, playsound, speech_recognition, sys, requests, beautifulsoup
