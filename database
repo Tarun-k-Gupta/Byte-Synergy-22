@@ -32,10 +32,12 @@ Coronavirus USA cases##SEARCH##DEFAULT
 Coronavirus Brazil cases##SEARCH##DEFAULT
 Coronavirus UK cases##SEARCH##DEFAULT
 Coronavirus##SEARCH##DEFAULT
+virus cases India##SEARCH##DEFAULT
 Search##SEARCH##DEFAULT
 Search for##SEARCH##DEFAULT
 Search about##SEARCH##DEFAULT
 Search web##SEARCH##DEFAULT
+the web for##SEARCH##DEFAULT
 Who##SEARCH##DEFAULT
 Remainder##MATH##DEFAULT_MOD
 Modulo##MATH##DEFAULT_MOD
@@ -118,6 +120,8 @@ your name##GEN##I am Zara... Glad to meet you.
 who you##GEN##My name is Zara... Nice to meet you.
 What's up##GEN##Going great. I hope you are doing well too
 How going##GEN##Going great. I hope you are doing well too
+Thank You##GEN##Your Welcome!
+Thanks Zara##GEN##Your Welcome!
 your hobby##GEN##I like coding.
 great bhai##GEN##Thank you. See you later.
 Great##GEN##Glad to be of help.
