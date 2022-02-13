@@ -17,14 +17,5 @@ Keywords like 'Search', 'Who',.. must be included for searching something in web
 Mathematical operations with multiple operands will perform a web search which may give glitches
 
 Modules from python used:
-tkinter
-time
-gtts
-selenium
-webbrowser
-os
-playsound
-speech_recognition
-sys
-requests
-beautifulsoup
+
+tkinter,time,gtts,selenium,webbrowser,os,playsound,speech_recognition,sys,requests,beautifulsoup
