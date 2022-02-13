@@ -2,8 +2,10 @@
 from doctest import master
 from itertools import count
 from datetime import datetime
+import subprocess
 from datetime import date
 import os
+import platform
 import time
 def actionDetector(keywords, inputText):
     strictness = 0.85
@@ -120,49 +122,97 @@ if(type == "GEN_SPECIFIC"): #Real time actions (eg: finding out time, date etc..
         botSpeak("Today's date is "+dayStr+" "+month+" "+str(lst[0]))
         print("Today's date is "+dayStr+" "+month+" "+str(lst[0]))
 
+    elif(topic == 'alarm'):
+        Time = input("enter the time(HH:MM) :  ")
+        message = input("enter reminder message: ")
+        os.system("python3 alarm.py Time message &")
+
+    elif(topic == 'joke'):
+        os.system("python3 joke.py Dad")
+    elif(topic == 'jokeanimal'):
+        os.system("python3 joke.py Animal")
+    elif(topic == 'jokevalentines'):
+        os.system("python3 joke.py Valentines")
+    elif(topic == 'jokefamily'):
+        os.system("python3 joke.py family")
+    elif(topic == 'jokedad'):
+        os.system("python3 joke.py Dad")
+    elif(topic == 'jokerelationship'):
+        os.system("python3 joke.py relationship")
     #We can ADD MORE CODE USING elif statements
 
 
 elif(type == "OPEN"): #Opening native apps
-    dummy = 1 #DELETE THIS LINE and add required code
-
+    if(platform.system() == 'Linux'):
+        topic = reply.split("_")[1].split("\n")[0].lower()
+        if(topic == 'chrome'):
+            cmd = 'google-chrome'
+            subprocess.call(cmd)
+        if(topic == 'firefox'):
+            cmd = 'firefox'
+            subprocess.call(cmd)
+        if(topic == 'code'):
+            cmd = 'code'
+            subprocess.call(cmd)
+        if(topic == 'spotify'):
+            cmd = 'spotify'
+            subprocess.call(cmd)
+        if(topic == 'software'):
+            cmd = 'gnome-software'
+            subprocess.call(cmd)
+        if(topic == 'dropbox'):
+            cmd = 'dropbox'
+            subprocess.call(cmd)
 #Note: -Due to lack of time, and since opening native apps is OS dependent, 
-#       we have left this capability as future scope.
+#       we have left this capability on windows and mac machines as future scope.
 #      -Currently the virtual assistant will detect application opening instructions,
-#       but will not perform any task.
+#       but will not perform any task if the user's operating system is windows or mac.
 
 elif(type == "SEARCH"): #Web search
-    index = -1
-    wordList=["for", "about", "regarding"]
-    iList=[]
     inputList = inputText.split(" ")
-    for word in wordList:
-        retVal = findIndex(inputList, word)
-        if(retVal != -1):
-            iList.append(retVal)
-    if(len(iList) != 0):
-        index = iList[0]
-        for i in range(len(iList)):
-            if(iList[i] < index):
-                index = iList[i]
-    index = index + 1
-    topic = ""
-    for j in range(index, len(inputList)):
-        if(j != len(inputList) - 1):
-            topic = topic + inputList[j] + " "
-        else:
-            topic = topic + inputList[j]
+    if(any(x in inputList for x in ['Coronavirus', 'coronavirus', 'covid', 'Covid', 'SARS'])):
 
-    if(len(topic) == 0):
-        botSpeak("Sorry. I didn't get that. Please try again")
-        print("Sorry. I didn't get that.\nPlease try again.")
-        botSpeak("If you want you can type your query next time")
-        print("If you want you can type your query next time!")
-    else:    
-        with open("search.txt", 'w') as s:
-            s.write(topic)
-        os.system("python3 searchEngine.py")
-        os.remove("search.txt")
+            a_set = set(inputList)
+            b_set = set(['India', 'Brazil', 'USA', 'UK', 'Germany', 'France', 'Spain', 'Pakistan', 'Italy'])
+
+            # check length
+            if len(a_set.intersection(b_set)) > 0:
+                text = a_set.intersection(b_set)
+                temp = list(text)
+                final_text = temp[0]
+                print(final_text)
+                os.system("python3 scraper.py final_text")
+    else:
+        index = -1
+        wordList=["for", "about", "regarding"]
+        iList=[]
+        for word in wordList:
+            retVal = findIndex(inputList, word)
+            if(retVal != -1):
+                iList.append(retVal)
+        if(len(iList) != 0):
+            index = iList[0]
+            for i in range(len(iList)):
+                if(iList[i] < index):
+                    index = iList[i]
+        index = index + 1
+        topic = ""
+        for j in range(index, len(inputList)):
+            if(j != len(inputList) - 1):
+                topic = topic + inputList[j] + " "
+            else:
+                topic = topic + inputList[j]
+
+        if(len(topic) == 0):
+            botSpeak("Sorry. I didn't get that. Please try again")
+            print("Sorry. I didn't get that.\nPlease try again.")
+            botSpeak("If you want you can type your query next time")
+            print("If you want you can type your query next time!")
+        else:
+            with open("search.txt", 'w') as s:
+                s.write(topic)
+            os.system("python3 searchEngine.py")
+            os.remove("search.txt")
 
 
 elif(type == "MATH"): #Arithmetic operations
