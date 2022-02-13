@@ -2,6 +2,7 @@ import requests
 from gtts import gTTS
 from playsound import playsound
 import os
+import webbrowser
 
 with open('links.txt', 'r') as r:
     allLinks = r.readlines()
@@ -21,7 +22,9 @@ for link in allLinks:
         break
 
 if (count == 0):
-    print(allLinks[0].replace("##FALSE", ""))
+    string = allLinks[0].replace("##FALSE", "")
+    print(string)
+    webbrowser.open_new(string)
     exit()
 
 response = requests.get(
