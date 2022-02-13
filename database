@@ -112,6 +112,7 @@ Check##SEARCH##DEFAULT
 What value##SEARCH##DEFAULT
 Verify##SEARCH##DEFAULT
 times##SEARCH##DEFAULT
+Play##SEARCH##DEFAULT
 Hello##GEN##Hey there!
 Hey##GEN##Hey there!
 Good morning##GEN##Good morning
@@ -120,6 +121,9 @@ Good evening##GEN##Good evening
 Good night##GEN##Good night... Take care.
 Goodbye##GEN##Until we talk again...
 Good##GEN##It's nice to be appreciated.
+You great##GEN##It's nice to be appreciated.
+You amazing##GEN##It's nice to be appreciated.
+You smart##GEN##It's nice to be appreciated.
 Bye##GEN##Goodbye
 you later##GEN##Goodbye
 How you##GEN##I am fine. Thanks for asking!
