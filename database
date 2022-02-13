@@ -35,6 +35,7 @@ Coronavirus##SEARCH##DEFAULT
 Search for##SEARCH##DEFAULT
 Search about##SEARCH##DEFAULT
 Search web##SEARCH##DEFAULT
+Look up##SEARCH##DEFAULT
 Remainder##MATH##DEFAULT_MOD
 Modulo##MATH##DEFAULT_MOD
 Add##MATH##DEFAULT_ADD
@@ -99,6 +100,17 @@ X %##SEARCH##DEFAULT
 * /##SEARCH##DEFAULT
 * %##SEARCH##DEFAULT
 Find##SEARCH##DEFAULT
+Integrate##SEARCH##DEFAULT
+Integration##SEARCH##DEFAULT
+Integral##SEARCH##DEFAULT
+Differentiate##SEARCH##DEFAULT
+Differentiation##SEARCH##DEFAULT
+Derivative##SEARCH##DEFAULT
+Evaluate##SEARCH##DEFAULT
+expression##SEARCH##DEFAULT
+Check##SEARCH##DEFAULT
+What value##SEARCH##DEFAULT
+Verify##SEARCH##DEFAULT
 times##SEARCH##DEFAULT
 Hello##GEN##Hey there!
 Hey##GEN##Hey there!
