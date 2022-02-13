@@ -1,4 +1,6 @@
 from playsound import playsound
 import os
-playsound('botSpeech.wav')
-os.remove("botSpeech.wav")
+
+def playAudio():
+    playsound('botSpeech.wav')
+    os.remove("botSpeech.wav")

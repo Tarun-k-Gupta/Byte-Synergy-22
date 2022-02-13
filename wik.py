@@ -1,45 +1,21 @@
 import requests
 from bs4 import BeautifulSoup
-from gtts import gTTS
-import sys
-from playsound import playsound
-import os
+import re
+url = "https://en.wikipedia.org/wiki/Fermat%27s_little_theorem"
+r = requests.get(url)
+soup = BeautifulSoup(r.content, 'html5lib')
 
-with open('links.txt', 'r') as r:
-    allLinks = r.readlines()    
-os.remove("links.txt")
-    
-count = 0    
-wiklink=""
-for link in allLinks:
-    index = link.find("##TRUE")
-    if(index != -1):
-        count += 1
-        wiklink = link.replace("##TRUE", "")
+print(soup.find('h1', {"id": "firstHeading"}).text)
+firstp = soup.find('p',class_="")
+print(firstp.text)
 
-if(count == 0):
-    print(allLinks[0].replace("##FALSE",""))
-    
-
-p_str=""
-try:
-    url = wiklink
-    r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html5lib')
-    print(soup.find('h1', {"id": "firstHeading"}).text)
-    getp = soup.find('p',class_="")
-    p_str = getp.text
-    for i in range(1,51):
-        p_str = p_str.replace("["+str(i)+"]","")
-    print(p_str)
-except:
-    pass
-
-
-def botSpeak(data):
-    with open("botSpeech.txt", 'w') as bS:
-        bS.write(data)
-    os.system("python3 botSpeak.py")
-    os.system("python3 playAudio.py")
-    
-botSpeak(p_str) 
+for i in firstp.next_siblings:
+    if(i.name == 'p' or i.name == 'h2'):
+        if(i.name == 'h2'):
+            i = i.text.replace('[edit]','')
+            if(i == 'See also' or i == 'Publications'):
+                break
+            print(i)
+            continue
+        
+        print(i.text)
