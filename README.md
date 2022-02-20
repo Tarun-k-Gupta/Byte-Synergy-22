@@ -1,4 +1,4 @@
-# Byte-Synergy-22
+# Zara- The Chatbot
 
 Command to run: $ python3 Zara.py
 
