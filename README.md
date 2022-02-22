@@ -1,5 +1,8 @@
 # Zara- The Chatbot
 
+ * This chat bot is built for the Byte-Synergy 2022 Hackathon held for 54 hrs from 11-02-2022 18:00 under @IIIT_Bangalore
+ * This application fetched us 3rd place under Task Automation category
+
 Command to run: $ python3 Zara.py
 
 Description:
